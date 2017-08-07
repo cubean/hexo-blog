@@ -8,7 +8,7 @@ subtitle: Change the world with AI and IoT
 site-subtitle: "Blog, Scala, Java, Bigdata, Spark, Play, Motion Control, Smart Grid, IoT, 大数据, 物联网"
 description: 千里之行始于足下
 author: Cubean Liu
-language:
+language: en
 timezone: Australia/Sydney 
 
 # URL
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
