@@ -25,7 +25,7 @@ This will increase more repeated parts at the same dataset folder.
 You may also want to order by size, to easily find the biggest ones.
 
 ```sh
-$ sudo du -h --threshold=1G \ | sort -n
+$ sudo du -h --threshold=1G / | sort -n
 
 ```
 (Works on Ubuntu/Mint and a few other Linux distributions)
