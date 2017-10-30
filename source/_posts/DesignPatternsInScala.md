@@ -1,5 +1,5 @@
 ---
-title: Design Patterns in Scala
+title: Design Patterns in Scala (Part I)
 date: 2017-10-14 19:50:32
 categories: Scala
 tags: 
@@ -22,14 +22,14 @@ solve a general design problem in a particular context.
 
 Class Scope
 
-- Factory Method 
+- Factory Method [Cubean Blog](http://www.cubeanliu.com/2017/10/14/DesignPatternsInScala/)
 
 Object Scope
 
-- Abstract Factory   [Wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern)
+- Abstract Factory   [Wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/14/DesignPatternsInScala/)
 - Builder
 - Prototype
-- Singleton
+- Singleton [Wiki](https://en.wikipedia.org/wiki/Singleton_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/29/Design-Patterns-in-Scala-Part-II/)
 
 
 ### Structural Purpose
@@ -201,10 +201,13 @@ object AnimalFactory {	private trait Animal	private case class Dog(name : Str
 
 Client
 
-```shMyAnimalFactory.createAnimal("dog")
-res20: String = doggy```
+```sh
+MyAnimalFactory.createAnimal("dog")
 
-Sometimes, a factory just defined and hide process then output object defined in outside.
+res20: String = doggy
+```
+
+> Sometimes, a factory just defined and hide process then output object defined in outside.
 
 ```scala
 trait Animalcase class Dog(name : String) extends Animalcase class Cat(name : String) extends Animal
@@ -220,6 +223,7 @@ object MyAnimalFactory {	private def createDog = Dog("doggy")
        }
     }
 }
+
 ```
 
 Client
