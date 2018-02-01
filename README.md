@@ -1,34 +1,29 @@
 # Cubean's technical blog with hexo
 
-## new
+## hexo new post xx.md
 
 ```sh
 $ hexo new [layout] <title>
 ```
-Example:
 
-```sh
-$ hexo new post new.md
-```
-
-## publish
+## hexo p post xx.md
 
 ```sh
 $ hexo publish [layout] <filename>
 ```
 
-## server
+## hexo s
 
 ```sh
 $ hexo server
 ```
-## deploy
+## hexo d
 
 ```sh
 $ hexo deploy
 ```
 
-## clean
+## hexo clean
 
 ```sh
 $ hexo clean
