@@ -27,9 +27,9 @@ Class Scope
 Object Scope
 
 - Abstract Factory   [Wiki](https://en.wikipedia.org/wiki/Abstract_factory_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/14/DesignPatternsInScala/)
-- Builder
-- Prototype
-- Singleton [Wiki](https://en.wikipedia.org/wiki/Singleton_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/29/Design-Patterns-in-Scala-Part-II/)
+- Builder [Cubean Blog](http://www.cubeanliu.com/2017/10/29/Design-Patterns-in-Scala-Part-II/#Builder)
+- Prototype [Cubean Blog](http://www.cubeanliu.com/2017/10/29/Design-Patterns-in-Scala-Part-II/#Prototype)
+- Singleton [Wiki](https://en.wikipedia.org/wiki/Singleton_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/29/Design-Patterns-in-Scala-Part-II/#Singleton)
 
 
 ### Structural Purpose
