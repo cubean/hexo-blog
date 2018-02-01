@@ -22,7 +22,7 @@ solve a general design problem in a particular context.
 
 Class Scope
 
-- Factory Method [Cubean Blog](http://www.cubeanliu.com/2017/10/14/DesignPatternsInScala/)
+- Factory Method [Wiki](https://en.wikipedia.org/wiki/Factory_method_pattern) [Cubean Blog](http://www.cubeanliu.com/2017/10/14/DesignPatternsInScala/)
 
 Object Scope
 
