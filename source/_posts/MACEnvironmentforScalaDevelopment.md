@@ -34,11 +34,19 @@ BuildVersion:    16F73
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## Oracle Java 8
+## Oracle Java
 
 ```sh
 $ brew update
-$ brew cask install java
+
+# Install jenv, java8 and java9
+brew install jenv
+
+# Install java8
+brew cask install caskroom/versions/java8
+
+# Install java9
+brew cask install java
 
 Downloading http://download.oracle.com/otn-pub/java/jdk/8u141-b15/336fa29ff2bb4ef291e347e091f7f4a7/jdk-8u141-macosx-x64.dmg
 ```
