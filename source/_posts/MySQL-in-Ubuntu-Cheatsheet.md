@@ -1,13 +1,49 @@
 ---
-title: MySQL in Ubuntu Cheatsheet
+title: MySQL Installation and Commands
 date: 2017-08-08 11:48:57
 categories: MySQL
 tags: 
 - MySQL
-- Ubuntu
 ---
 
-# Install MySQL
+## 1. Mount additional disk to mysql data folder
+
+```sh
+$ sudo fdisk -l
+$ sudo mkfs.ext4 /dev/xvdb
+$ sudo mkdir /var/lib/mysql
+$ sudo vi /etc/fstab
+/dev/xvdb      /var/lib/mysql         ext4    defaults,nofail 0 2
+
+$ sudo mount -a
+$ df -h
+
+$ sudo rm -rf /var/lib/mysql/*
+```
+
+## 2. Install MySQL in Redhat 
+
+[Official Doc](https://dev.mysql.com/doc/refman/5.7/en/linux-installation-yum-repo.html)
+
+```sh
+$ curl -O https://repo.mysql.com//mysql57-community-release-el7-11.noarch.rpm
+$ sudo yum -y localinstall mysql57-community-release-el7-11.noarch.rpm
+$ sudo yum repolist all | grep mysql
+
+$ sudo yum -y install mysql-community-server
+
+$ sudo service mysqld start
+$ sudo service mysqld status
+
+$ sudo grep 'temporary password' /var/log/mysqld.log
+$ mysql -uroot -p
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '<ROOTPsw>';
+
+mysql> SHOW VARIABLES LIKE 'validate_password%';
+mysql> SET GLOBAL validate_password_policy=LOW;
+```
+
+## 3. Install MySQL in Ubuntu
 
 ```sh
 $ sudo apt-get update
@@ -22,10 +58,10 @@ $ mysqladmin -p -u root version
 
 <!-- more -->
 
-# Create new user and open remote visiting
+## 4. Create new user
 
 ```sh
-$ mysql -p -u root 
+$ mysql -uroot -p
 mysql > CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 mysql > CREATE USER 'username'@'%' IDENTIFIED BY 'password';
 mysql > GRANT ALL ON *.* TO 'username'@'localhost';
@@ -34,29 +70,39 @@ mysql > GRANT ALL ON *.* TO 'username'@'%';
 // Give part authorization
 mysql > GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, REFERENCES
   ON webdb.* TO 'new_user’@‘%’;
+```
 
+## 5. Open remote visiting in Ubuntu
+
+```sh
 // Enable remote visiting
-$ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+$ sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 
 // Find and comment next line
 …
 # bind-address = 127.0.0.1
 …
 
+```
+
+## 6. Restart mysql
+
+```sh
 // Restart mysql
 $ sudo systemctl restart mysql
 
 ```
 
-# Duplicate table
+## Other options
+
+### Duplicate table
 
 ```sql
 CREATE TABLE newtable LIKE oldtable; 
 INSERT newtable SELECT * FROM oldtable;
 ```
 
-
-# Change max connection num
+### Change max connection num
 
 ```sh
 
@@ -70,7 +116,7 @@ $ sudo service mysql restart
 
 ```
 
-# FORCE UNLOCK for locked tables in MySQL
+### FORCE UNLOCK for locked tables in MySQL
 
 
 Breaking locks like this may cause atomicity in the database to not be enforced on the sql statements that caused the lock.
@@ -99,8 +145,7 @@ mysql> show processlist;
 mysql> kill <put_process_id_here>;
 ```
 
-
-# Change the root password
+### Change the root password
 
 ```sh
 $ sudo /etc/init.d/mysql stop
@@ -114,8 +159,7 @@ $ sudo /etc/init.d/mysql start
 ```
 
 
-# Calculate the MySQL database size
-
+### Calculate the MySQL database size
 
 Sum up the data_length + index_length is equal to the total table size.
 
@@ -137,8 +181,7 @@ Sum up the data_length + index_length is equal to the total table size.
 	FROM information_schema.TABLES where table_schema = "schema_name";
 	```
 	
-# Locate the MySQL stored data
-	
+### Locate the MySQL stored data
 	
 ```sh
 $ cd /var/lib/mysql
@@ -147,7 +190,7 @@ total 1.5G
 ...
 ```
 
-# MySQL configuration
+## MySQL configuration
 
 ```sh
 

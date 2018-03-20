@@ -6,6 +6,11 @@
 $ hexo new [layout] <title>
 ```
 
+## hexo g
+
+## hexo d
+
+
 ## hexo p post xx.md
 
 ```sh
@@ -16,11 +21,6 @@ $ hexo publish [layout] <filename>
 
 ```sh
 $ hexo server
-```
-## hexo d
-
-```sh
-$ hexo deploy
 ```
 
 ## hexo clean
