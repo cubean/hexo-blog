@@ -1,6 +1,6 @@
 ---
 title: Spark Operations
-date: 2017-03-24 17:54:01
+date: 2017-11-03 18:54:01
 tags:
 - Spark
 - Big data
@@ -38,6 +38,8 @@ bin/spark-shell -i loadalldatasets.scala
 sbin/start-master.sh
 sbin/start-slave.sh spark://<MasterIP>:7077
 ```
+
+<!-- more -->
 
 ## spark-submit
 
