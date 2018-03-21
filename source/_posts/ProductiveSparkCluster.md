@@ -1,6 +1,6 @@
 ---
 title: Productive Spark Cluster in YARN-Client Mode
-date: 2018-03-20 12:41:07
+date: 2018-02-20 12:41:07
 tags: 
 - Spark
 - Hadoop

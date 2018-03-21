@@ -1,6 +1,6 @@
 ---
 title: Monitor Memory and Disk Metrics for Amazon EC2 Linux Instance
-date: 2018-01-03 14:04:36
+date: 2017-11-02 14:04:36
 tags:
 - AWS
 - DevOps
