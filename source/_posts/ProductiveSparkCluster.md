@@ -287,6 +287,19 @@ $ sudo rm -rf /var/lib/docker/*
 
 Then install docker-ce, docker-py(required by docker login)
 
+In AWS linux (RHEL):
+
+```sh
+sudo yum install docker
+sudo service docker start
+sudo service docker status
+
+sudo usermode -aG docker ec2-user
+
+cd spark-jobserver
+sbt docker
+```
+
 ### 3. [Optional] Install Ansible
 
 ```sh
@@ -490,7 +503,7 @@ curl -d "input.string = a b c a b see" "<Master IP>:8090/jobs?appName=test&class
 curl -d "sql = \"select * from addresses limit 10\"" '<Master IP>:8090/jobs?appName=test&classPath=spark.jobserver.SqlTestJob&context=test-context&sync=true'
 
 ```
-### 3. Spark Yarn-client mode
+### 3. Spark standalone mode
 
 - Start Spark job-server docker
 
